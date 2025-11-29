@@ -7,6 +7,8 @@ const backButton = document.getElementById("back-button");
 let countries = [];
 let selected = null;
 let currentList = [];
+const THEME_KEY = "theme-choice";
+const FILTER_KEY = "filters";
 const fallbackSeed = [
   {
     name: { common: "Fallback Country" },
@@ -23,6 +25,7 @@ function start() {
   if (themeButton) {
     themeButton.addEventListener("click", toggleTheme);
   }
+  loadSavedPrefs();
   if (backButton) {
     backButton.addEventListener("click", showList);
   }
@@ -33,6 +36,10 @@ function start() {
 
 function toggleTheme() {
   document.body.classList.toggle("dark-mode");
+  const currentTheme = document.body.classList.contains("dark-mode")
+    ? "dark"
+    : "light";
+  localStorage.setItem(THEME_KEY, currentTheme);
 }
 
 function bindFilters() {
@@ -89,6 +96,7 @@ function applyFilters() {
     const matchesRegion = region ? item.region === region : true;
     return matchesName && matchesRegion;
   });
+  saveFilters();
   renderCountries(filtered);
 }
 
@@ -175,6 +183,35 @@ function showList() {
   detail?.classList.add("d-none");
   grid?.classList.remove("d-none");
   setStatus("");
+}
+
+function loadSavedPrefs() {
+  const savedTheme = localStorage.getItem(THEME_KEY);
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark-mode");
+  }
+  const savedFilters = localStorage.getItem(FILTER_KEY);
+  if (savedFilters) {
+    try {
+      const parsed = JSON.parse(savedFilters);
+      if (searchInput && typeof parsed.term === "string") {
+        searchInput.value = parsed.term;
+      }
+      if (regionSelect && typeof parsed.region === "string") {
+        regionSelect.value = parsed.region;
+      }
+    } catch (e) {
+      // ignore bad data
+    }
+  }
+}
+
+function saveFilters() {
+  const data = {
+    term: searchInput?.value || "",
+    region: regionSelect?.value || "",
+  };
+  localStorage.setItem(FILTER_KEY, JSON.stringify(data));
 }
 
 start();
