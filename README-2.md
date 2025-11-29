@@ -39,7 +39,7 @@ Users can view different countries and see their relevant information.
 
 ## <a name="deployment"></a>Deployed Link
 
-[Github Pages](https://github.com/a-zeb/rest-countries-api-with-color-theme-switcher-master/settings/pages)
+[Github Pages](https://a-zeb.github.io/rest-countries-api-with-color-theme-switcher-master/)
 
 - You can view the repository:
   [Github.com](https://github.com/a-zeb/rest-countries-api-with-color-theme-switcher-master)
