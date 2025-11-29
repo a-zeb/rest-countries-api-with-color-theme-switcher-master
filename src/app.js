@@ -144,17 +144,9 @@ function renderCountries(list) {
 
 function setStatus(text) {
   const existing = document.getElementById("status-message");
-  if (existing) {
-    existing.textContent = text;
-    existing.classList.toggle("d-none", !text);
-    return;
-  }
-  if (!text) return;
-  const p = document.createElement("p");
-  p.id = "status-message";
-  p.className = "mt-3";
-  p.textContent = text;
-  grid?.parentElement?.appendChild(p);
+  if (!existing) return;
+  existing.textContent = text;
+  existing.classList.toggle("d-none", !text);
 }
 
 function showDetail() {

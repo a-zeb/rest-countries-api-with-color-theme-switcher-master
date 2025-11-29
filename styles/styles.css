@@ -9,9 +9,49 @@ body {
   color: #ffffff;
 }
 
+.dark-mode header {
+  background: #1e1e1e !important;
+  color: #ffffff;
+  border-color: #2a2a2a !important;
+}
+
+.dark-mode header h1 {
+  color: #ffffff;
+}
+
+.dark-mode .btn-outline-dark {
+  color: #ffffff;
+  border-color: #888;
+}
+
+.dark-mode .btn-outline-dark:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+.dark-mode .btn-outline-secondary {
+  color: #ffffff;
+  border-color: #bbbbbb;
+  background: #2a2a2a;
+}
+
+.dark-mode .btn-outline-secondary:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+.dark-mode .text-muted {
+  color: #cccccc !important;
+}
+
 .dark-mode .card {
   background: #1e1e1e;
   color: #ffffff;
+}
+
+.dark-mode .form-control,
+.dark-mode .form-select {
+  border-color: #666;
 }
 
 .dark-mode .form-control,
@@ -35,4 +75,14 @@ body {
 :focus-visible {
   outline: 2px solid #0d6efd;
   outline-offset: 2px;
+}
+
+.country-card {
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.country-card:hover,
+.country-card:focus-visible {
+  transform: translateY(-2px);
 }
