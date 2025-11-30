@@ -7,6 +7,8 @@ const backButton = document.getElementById("back-button");
 let countries = [];
 let selected = null;
 let currentList = [];
+const API_URL =
+  "https://restcountries.com/v3.1/all?fields=name,population,region,capital,flags,borders,cca3";
 const THEME_KEY = "theme-choice";
 const FILTER_KEY = "filters";
 const fallbackSeed = [
@@ -16,10 +18,10 @@ const fallbackSeed = [
     region: "Nowhere",
     capital: ["Example City"],
     flags: { png: "", alt: "Placeholder flag" },
+    borders: [],
+    cca3: "FAL",
   },
 ];
-const API_URL =
-  "https://restcountries.com/v3.1/all?fields=name,population,region,capital,flags";
 
 function start() {
   if (themeButton) {
@@ -156,6 +158,7 @@ function showDetail() {
   const popEl = detail.querySelector(".detail-pop");
   const regionEl = detail.querySelector(".detail-region");
   const capitalEl = detail.querySelector(".detail-capital");
+  const bordersEl = detail.querySelector(".detail-borders");
 
   if (flagEl) {
     flagEl.src = selected?.flags?.png || "";
@@ -166,6 +169,21 @@ function showDetail() {
     popEl.textContent = selected?.population?.toLocaleString?.() || "-";
   if (regionEl) regionEl.textContent = selected?.region || "-";
   if (capitalEl) capitalEl.textContent = selected?.capital?.[0] || "-";
+  if (bordersEl) {
+    bordersEl.innerHTML = "";
+    const codes = selected?.borders || [];
+    if (!codes.length) {
+      bordersEl.textContent = "None";
+    } else {
+      codes.forEach((code) => {
+        const btn = document.createElement("button");
+        btn.className = "btn btn-outline-secondary btn-sm";
+        btn.textContent = code;
+        btn.addEventListener("click", () => pickByCode(code));
+        bordersEl.appendChild(btn);
+      });
+    }
+  }
 
   detail.classList.remove("d-none");
   grid?.classList.add("d-none");
@@ -175,6 +193,17 @@ function showList() {
   detail?.classList.add("d-none");
   grid?.classList.remove("d-none");
   setStatus("");
+}
+
+function pickByCode(code) {
+  if (!code) return;
+  const found = countries.find(
+    (c) => c?.cca3?.toLowerCase() === code.toLowerCase()
+  );
+  if (found) {
+    selected = found;
+    showDetail();
+  }
 }
 
 function loadSavedPrefs() {
