@@ -20,6 +20,7 @@ REST Countries API with color theme switcher: this project allows users to view 
 - JavaScript
 - HTML5
 - CSS3
+- Bootstrap
 
 ## Features
 
@@ -35,7 +36,8 @@ Users can view different countries and see their relevant information.
 
 ## <a name="nextsteps"></a>Project Next Steps
 
-- Create boilerplate and proceed to API integration.
+- Refactor using typescript
+- Refactor using React
 
 ## <a name="deployment"></a>Deployed Link
 
@@ -46,4 +48,4 @@ Users can view different countries and see their relevant information.
 
 ## <a name="author"></a>About The Author
 
-I am a software engineer with 4+ years of industry experience. I work on projects like these to sharpen my skillset and have fun.
+I am a software engineer with 4+ years of industry experience. I create this project for the PerScholas coding bootcamp to strengthen my foundational skills and learn some new ones.

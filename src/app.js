@@ -111,16 +111,16 @@ function renderCountries(list) {
     return;
   }
   setStatus("");
-  list.forEach((country, index) => {
-    const col = document.createElement("div");
-    col.className = "col";
-    col.innerHTML = `
-      <div class="card h-100 country-card" data-index="${index}">
-        <div class="ratio ratio-4x3 bg-light border-bottom">
-          <img src="${country?.flags?.png || ""}" alt="${
-      country?.flags?.alt || ""
-    }" class="w-100 h-100 object-fit-cover" />
-        </div>
+	  list.forEach((country, index) => {
+	    const col = document.createElement("div");
+	    col.className = "col";
+	    col.innerHTML = `
+	      <div class="card h-100 country-card" data-index="${index}" role="button" tabindex="0">
+	        <div class="ratio ratio-4x3 bg-light border-bottom">
+	          <img src="${country?.flags?.png || ""}" alt="${
+	      country?.flags?.alt || ""
+	    }" class="w-100 h-100 object-fit-cover" />
+	        </div>
         <div class="card-body">
           <h2 class="h6 card-title mb-2">${
             country?.name?.common || "Unknown"
@@ -134,15 +134,23 @@ function renderCountries(list) {
       </div>
     `;
     grid.appendChild(col);
-  });
-  grid.querySelectorAll(".country-card").forEach((card) => {
-    card.addEventListener("click", () => {
-      const idx = Number(card.getAttribute("data-index"));
-      selected = currentList[idx] || null;
-      showDetail();
-    });
-  });
-}
+	  });
+	  grid.querySelectorAll(".country-card").forEach((card) => {
+	    card.addEventListener("click", () => {
+	      const idx = Number(card.getAttribute("data-index"));
+	      selected = currentList[idx] || null;
+	      showDetail();
+	    });
+	    card.addEventListener("keydown", (e) => {
+	      if (e.key === "Enter" || e.key === " ") {
+	        e.preventDefault();
+	        const idx = Number(card.getAttribute("data-index"));
+	        selected = currentList[idx] || null;
+	        showDetail();
+	      }
+	    });
+	  });
+	}
 
 function setStatus(text) {
   const existing = document.getElementById("status-message");
