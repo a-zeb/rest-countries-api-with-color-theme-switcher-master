@@ -17,6 +17,10 @@ body {
   font-size: 14px;
 }
 
+header h1 {
+  font-weight: 800;
+}
+
 .dark-mode {
   background: var(--dark-bg);
   color: var(--dark-text);
@@ -69,6 +73,36 @@ body {
   color: var(--dark-text);
 }
 
+.dark-mode .form-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 16 16'%3e%3cpath d='M1.5 5.5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 12px 12px;
+  padding-right: 2rem;
+}
+
+.dark-mode .input-group-text {
+  background: var(--dark-card);
+  color: var(--dark-text);
+  border-color: #666;
+}
+
+.form-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23555' viewBox='0 0 16 16'%3e%3cpath d='M1.5 5.5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 12px 12px;
+  padding-right: 2rem;
+}
+
+.form-select,
+.input-group-text,
+.form-control {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
 .dark-mode .form-control,
 .dark-mode .form-select {
   background: #1e1e1e;
@@ -114,4 +148,14 @@ body {
 
 .detail-borders .btn {
   min-width: 64px;
+}
+
+.detail-flag-wrap {
+  max-height: 320px;
+  max-width: 520px;
+  overflow: hidden;
+}
+
+.detail-list li {
+  margin-bottom: 0.4rem;
 }
