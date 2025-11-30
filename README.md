@@ -20,11 +20,16 @@ REST Countries API with color theme switcher: this project allows users to view 
 - JavaScript
 - HTML5
 - CSS3
-- Bootstrap
+- Bootstrap 5 (CDN)
 
 ## Features
 
-Users can view different countries and see their relevant information.
+- Fetches country information from REST Countries API.
+- Shows all countries, search by name, filter by region.
+- Click a country to see details; click border codes to jump to neighbors.
+- Light/dark toggle remembers theme and filters via localStorage.
+- Uses `data.json` as a fallback if the API is slow or blocked.
+- Keyboard-friendly cards allow you to select with tab and enter keys, visible focus, hidden labels.
 
 ## Trello Planning
 
