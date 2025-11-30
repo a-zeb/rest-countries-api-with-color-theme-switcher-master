@@ -1,27 +1,40 @@
+:root {
+  --light-bg: hsl(0, 0%, 99%);
+  --light-card: hsl(0, 100%, 100%);
+  --light-text: hsl(200, 15%, 8%);
+  --light-input: hsl(0, 0%, 50%);
+  --dark-bg: hsl(207, 26%, 17%);
+  --dark-card: hsl(209, 23%, 22%);
+  --dark-text: hsl(0, 0%, 100%);
+}
+
 body {
   margin: 0;
   padding: 16px;
-  font-family: Arial, sans-serif;
+  font-family: "Nunito Sans", Arial, sans-serif;
+  background: var(--light-bg);
+  color: var(--light-text);
+  font-size: 14px;
 }
 
 .dark-mode {
-  background: #121212;
-  color: #ffffff;
+  background: var(--dark-bg);
+  color: var(--dark-text);
 }
 
 .dark-mode header {
-  background: #1e1e1e !important;
-  color: #ffffff;
-  border-color: #2a2a2a !important;
+  background: var(--dark-card) !important;
+  color: var(--dark-text);
+  border-color: var(--dark-card) !important;
 }
 
 .dark-mode header h1 {
-  color: #ffffff;
+  color: var(--dark-text);
 }
 
 .dark-mode .btn-outline-dark {
-  color: #ffffff;
-  border-color: #888;
+  color: var(--dark-text);
+  border-color: #bbbbbb;
 }
 
 .dark-mode .btn-outline-dark:hover {
@@ -30,9 +43,9 @@ body {
 }
 
 .dark-mode .btn-outline-secondary {
-  color: #ffffff;
+  color: var(--dark-text);
   border-color: #bbbbbb;
-  background: #2a2a2a;
+  background: var(--dark-card);
 }
 
 .dark-mode .btn-outline-secondary:hover {
@@ -45,13 +58,15 @@ body {
 }
 
 .dark-mode .card {
-  background: #1e1e1e;
-  color: #ffffff;
+  background: var(--dark-card);
+  color: var(--dark-text);
 }
 
 .dark-mode .form-control,
 .dark-mode .form-select {
   border-color: #666;
+  background: var(--dark-card);
+  color: var(--dark-text);
 }
 
 .dark-mode .form-control,
@@ -85,4 +100,18 @@ body {
 .country-card:hover,
 .country-card:focus-visible {
   transform: translateY(-2px);
+}
+
+.card {
+  background: var(--light-card);
+  color: var(--light-text);
+}
+
+.form-control::placeholder {
+  color: var(--light-input);
+  opacity: 1;
+}
+
+.detail-borders .btn {
+  min-width: 64px;
 }
