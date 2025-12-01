@@ -1,0 +1,71 @@
+:root {
+  --dark-bg: hsl(207, 26%, 17%);
+  --dark-card: hsl(209, 23%, 22%);
+  --dark-text: hsl(0, 0%, 100%);
+}
+
+.dark-mode {
+  background: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+.dark-mode header {
+  background: var(--dark-card) !important;
+  color: var(--dark-text);
+  border-color: var(--dark-card) !important;
+}
+
+.dark-mode header h1 {
+  color: var(--dark-text);
+}
+
+.dark-mode .btn-outline-dark {
+  color: var(--dark-text);
+  border-color: #bbbbbb;
+}
+
+.dark-mode .btn-outline-dark:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+.dark-mode .btn-outline-secondary {
+  color: var(--dark-text);
+  border-color: #bbbbbb;
+  background: var(--dark-card);
+}
+
+.dark-mode .btn-outline-secondary:hover {
+  background: #ffffff;
+  color: #000000;
+}
+
+.dark-mode .text-muted {
+  color: #cccccc !important;
+}
+
+.dark-mode .card {
+  background: var(--dark-card);
+  color: var(--dark-text);
+}
+
+.dark-mode .form-control,
+.dark-mode .form-select {
+  border-color: #666;
+  background: var(--dark-card);
+  color: var(--dark-text);
+}
+
+.dark-mode .form-select {
+  background-image: url("../assets/icons/caret-dark.svg") !important;
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 12px 12px;
+  padding-right: 2rem;
+}
+
+.dark-mode .input-group-text {
+  background: var(--dark-card);
+  color: var(--dark-text);
+  border-color: #666;
+}

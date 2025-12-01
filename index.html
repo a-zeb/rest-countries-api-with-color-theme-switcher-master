@@ -12,12 +12,14 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap"
     />
-    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/detail.css" />
+    <link rel="stylesheet" href="styles/dark.css" />
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       defer
     ></script>
-    <script src="src/app.js" defer></script>
+    <script src="src/app.js" type="module" defer></script>
   </head>
   <body>
     <header class="bg-light border-bottom">
@@ -25,7 +27,10 @@
         class="container py-3 d-flex justify-content-between align-items-center"
       >
         <h1 class="h5 m-0">Where in the world?</h1>
-        <button id="theme-toggle" class="btn btn-outline-dark btn-sm d-flex align-items-center gap-2">
+        <button
+          id="theme-toggle"
+          class="btn btn-outline-dark btn-sm d-flex align-items-center gap-2"
+        >
           <span aria-hidden="true">🌙</span>
           <span>Dark Mode</span>
         </button>
@@ -35,9 +40,11 @@
     <main class="container my-4">
       <div class="row g-3 align-items-center justify-content-between">
         <div class="col-12 col-md-6 col-lg-5">
-          <label class="visually-hidden" for="search-input">Search for a country</label>
+          <label class="visually-hidden" for="search-input"
+            >Search for a country</label
+          >
           <div class="input-group">
-            <span class="input-group-text" aria-hidden="true">🔍</span>
+            <span class="input-group-text" aria-hidden="true"> 🔍 </span>
             <input
               id="search-input"
               class="form-control"
@@ -47,7 +54,9 @@
           </div>
         </div>
         <div class="col-12 col-md-4 col-lg-3 ms-md-auto">
-          <label class="visually-hidden" for="region-select">Filter by region</label>
+          <label class="visually-hidden" for="region-select"
+            >Filter by region</label
+          >
           <select id="region-select" class="form-select">
             <option value="">All regions</option>
             <option value="Africa">Africa</option>
@@ -59,7 +68,12 @@
         </div>
       </div>
 
-      <p id="status-message" class="mt-3 text-muted" aria-live="polite" role="status"></p>
+      <p
+        id="status-message"
+        class="mt-3 text-muted"
+        aria-live="polite"
+        role="status"
+      ></p>
 
       <div
         class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 mt-4"
@@ -78,7 +92,12 @@
         </div>
       </div>
 
-      <section class="mt-4 d-none" id="country-detail" role="region" aria-labelledby="detail-heading">
+      <section
+        class="mt-4 d-none"
+        id="country-detail"
+        role="region"
+        aria-labelledby="detail-heading"
+      >
         <button class="btn btn-outline-secondary mb-3" id="back-button">
           ← Back
         </button>
@@ -90,22 +109,48 @@
               </div>
             </div>
             <div class="col-12 col-md-6">
-              <h2 class="h4 fw-bold detail-name mb-3" id="detail-heading">Country Detail</h2>
+              <h2 class="h4 fw-bold detail-name mb-3" id="detail-heading">
+                Country Detail
+              </h2>
               <div class="row">
                 <div class="col-12 col-lg-6">
                   <ul class="list-unstyled detail-list mb-3">
-                    <li><strong>Native Name:</strong> <span class="detail-native">-</span></li>
-                    <li><strong>Population:</strong> <span class="detail-pop">-</span></li>
-                    <li><strong>Region:</strong> <span class="detail-region">-</span></li>
-                    <li><strong>Sub Region:</strong> <span class="detail-subregion">-</span></li>
-                    <li><strong>Capital:</strong> <span class="detail-capital">-</span></li>
+                    <li>
+                      <strong>Native Name:</strong>
+                      <span class="detail-native">-</span>
+                    </li>
+                    <li>
+                      <strong>Population:</strong>
+                      <span class="detail-pop">-</span>
+                    </li>
+                    <li>
+                      <strong>Region:</strong>
+                      <span class="detail-region">-</span>
+                    </li>
+                    <li>
+                      <strong>Sub Region:</strong>
+                      <span class="detail-subregion">-</span>
+                    </li>
+                    <li>
+                      <strong>Capital:</strong>
+                      <span class="detail-capital">-</span>
+                    </li>
                   </ul>
                 </div>
                 <div class="col-12 col-lg-6">
                   <ul class="list-unstyled detail-list mb-3">
-                    <li><strong>Top Level Domain:</strong> <span class="detail-tld">-</span></li>
-                    <li><strong>Currencies:</strong> <span class="detail-currencies">-</span></li>
-                    <li><strong>Languages:</strong> <span class="detail-languages">-</span></li>
+                    <li>
+                      <strong>Top Level Domain:</strong>
+                      <span class="detail-tld">-</span>
+                    </li>
+                    <li>
+                      <strong>Currencies:</strong>
+                      <span class="detail-currencies">-</span>
+                    </li>
+                    <li>
+                      <strong>Languages:</strong>
+                      <span class="detail-languages">-</span>
+                    </li>
                   </ul>
                 </div>
               </div>

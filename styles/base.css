@@ -1,0 +1,71 @@
+:root {
+  --light-bg: hsl(0, 0%, 99%);
+  --light-card: hsl(0, 100%, 100%);
+  --light-text: hsl(200, 15%, 8%);
+  --light-input: hsl(0, 0%, 50%);
+}
+
+body {
+  margin: 0;
+  padding: 16px;
+  font-family: "Nunito Sans", Arial, sans-serif;
+  background: var(--light-bg);
+  color: var(--light-text);
+  font-size: 14px;
+}
+
+header h1 {
+  font-weight: 800;
+}
+
+.form-select {
+  background-image: url("../assets/icons/caret-light.svg");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 12px 12px;
+  padding-right: 2rem;
+}
+
+.form-select,
+.input-group-text,
+.form-control {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid #0d6efd;
+  outline-offset: 2px;
+}
+
+.country-card {
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.country-card:hover,
+.country-card:focus-visible {
+  transform: translateY(-2px);
+}
+
+.card {
+  background: var(--light-card);
+  color: var(--light-text);
+}
+
+.form-control::placeholder {
+  color: var(--light-input);
+  opacity: 1;
+}

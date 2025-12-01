@@ -1,0 +1,13 @@
+.detail-flag-wrap {
+  max-height: 320px;
+  max-width: 520px;
+  overflow: hidden;
+}
+
+.detail-list li {
+  margin-bottom: 0.4rem;
+}
+
+.detail-borders .btn {
+  min-width: 64px;
+}
